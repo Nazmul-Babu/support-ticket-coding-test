@@ -30,5 +30,5 @@ Route::post('profile-password/update', [ProfileController::class, 'profile_passw
 route::match(['get','post'],'ticket-add',[TicketController::class,'ticket_add'])->name('ticket.add');
 route::match(['get','post'],'ticket-list',[TicketController::class,'ticket_list'])->name('ticket.list');
 route::match(['get','post'],'ticket-details/{ticket_id}',[TicketController::class,'ticket_details'])->name('ticket.details');
-route::get('ticket-status/{ticket_id}',[TicketController::class,'ticket_details'])->name('ticket.details');
+route::post('ticket-status',[TicketController::class,'ticket_status'])->name('ticket.status');
 

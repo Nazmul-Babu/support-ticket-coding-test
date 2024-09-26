@@ -30,12 +30,14 @@
              </a>
              <div class="collapse" id="ticket">
                  <ul class="nav sub-menu">
+                    @if (Auth::user()->roll == 'customer')                        
                      <li class="nav-item ">
                          <a href="{{ route('ticket.add') }}"
                              class="nav-link {{ $data['active_menu'] == 'ticket_add' ? 'active' : '' }}">Ticket
                              Add</a>
                      </li>
-                     <li class="nav-item ">
+                    @endif
+                     <li class="nav-item">
                          <a href="{{ route('ticket.list') }}"
                              class="nav-link {{ $data['active_menu'] == 'ticket_list' ? 'active' : '' }}">Ticket
                              List</a>

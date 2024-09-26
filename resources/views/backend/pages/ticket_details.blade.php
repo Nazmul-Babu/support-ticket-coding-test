@@ -33,11 +33,8 @@
                         <h6 class="p-3 text-center">Ticket Responses</h6>
                         @foreach ($data['ticket_details'] as $single_response)
                             <div>
-                                @if ($single_response->roll == 'admin')
-                                    <p>Administrator ({{ date('d M Y', strtotime($single_response->created_at)) }})</p>
-                                @else
-                                    <p>You ({{ date('d M Y', strtotime($single_response->created_at)) }})</p>
-                                @endif
+                                <p> {{ $single_response->name }}
+                                    ({{ date('d M Y', strtotime($single_response->created_at)) }})</p>
                                 <p>{{ $single_response->response }}</p>
                             </div>
                         @endforeach

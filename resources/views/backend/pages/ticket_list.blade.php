@@ -86,8 +86,20 @@
     <script>
         function change_status(ticket_id) {
                 var status = $("#ticket_status_" + ticket_id).val();
-                alert(status);
-                $.ajax({})
+                $.ajax({
+                    url: "/ticket-status/",
+                    type: "POST",
+                    data:{
+                        "_token" : '{{ csrf_token() }}',
+                        'ticket_id' : ticket_id,
+                        'status' : status
+                    },
+                    success:function(data){
+                        if(data.status == true){
+                            alert("Status Changed");
+                        }
+                    }
+                })
         }
     </script>
 @endpush
